@@ -15,6 +15,11 @@ export default function TextForm(props) {
     console.log("On Change");
     setText(event.target.value)
   }
+    const handelSentenceClick = () => {
+  if (!text) return;
+  const newText = text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
+  setText(newText);
+};
 
   const[text, setText] = useState('Enter text here');
   
@@ -27,6 +32,7 @@ export default function TextForm(props) {
       </div>
        <button className="btn btn-primary mx-2" onClick={handelUpClick}>Convert to UpperCase</button>
        <button className="btn btn-primary mx-2" onClick={handelLoClick}>Convert to LowerCase</button>
+       <button className="btn btn-primary mx-2" onClick={handelSentenceClick}>Convert to SentenceCase</button>
     </div>
     <div className="container my-3">
       <h1> Your trxt summary</h1>
