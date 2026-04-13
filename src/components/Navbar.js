@@ -1,7 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export default function Navbar(props) {
+export default function Navbar({
+  title = "Text Utility",
+  about = "About",
+  ...props
+}) {
   return (
     //this prop is use for controlling th color of navbar
     <nav
@@ -46,6 +50,7 @@ export default function Navbar(props) {
               role="switch"
               aria-checked={props.mode === "light"}
               checked={props.mode === "dark"}
+              readOnly 
               id="switchCheckDefault"
             />
             <label className="form-check-label" htmlFor="switchCheckDefault">
@@ -58,10 +63,7 @@ export default function Navbar(props) {
   );
 }
 Navbar.propTypes = {
-  title: PropTypes.string.isRequired,
-  about: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  about: PropTypes.string,
 };
-Navbar.defaultProps = {
-  title: "Text Utility",
-  about: "About",
-};
+
