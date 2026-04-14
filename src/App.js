@@ -23,10 +23,12 @@ function App() {
       setMode("dark");
       document.body.style.backgroundColor = "#102a52";
       showAlert("Dark mode hs been Enabled", "success");
+      document.title= 'TextUtils - Dark Mode';
     } else {
       setMode("light");
       document.body.style.backgroundColor = "white";
       showAlert("Light mode hs been Enabled", "success");
+      document.title= 'TextUtils - Light Mode';
     }
   };
   return (
